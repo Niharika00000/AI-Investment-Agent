@@ -1,0 +1,47 @@
+{
+  "name": "investment-agent-server",
+  "version": "1.0.0",
+  "description": "AI Investment Research Agent - Backend",
+  "main": "dist/index.js",
+  "scripts": {
+    "predev": "node scripts/kill-port.cjs",
+    "dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
+    "prestart": "node scripts/kill-port.cjs",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:studio": "prisma studio",
+    "prisma:push": "prisma db push"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.26",
+    "@langchain/google-genai": "^0.1.1",
+    "@langchain/langgraph": "^0.2.34",
+    "@langchain/openai": "^0.3.16",
+    "@prisma/client": "^5.22.0",
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "langchain": "^0.3.15",
+    "node-cache": "^5.1.2",
+    "winston": "^3.17.0",
+    "yahoo-finance2": "^2.11.3",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^22.10.7",
+    "prisma": "^5.22.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.3"
+  }
+}

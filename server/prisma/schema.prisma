@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String            @id @default(cuid())
+  email        String            @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  requests     ResearchRequest[]
+
+  @@map("users")
+}
+
+model ResearchRequest {
+  id          String          @id @default(cuid())
+  companyName String
+  userId      String?
+  status      String          @default("PENDING")
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  agentLogs   AgentLog[]
+  report      ResearchReport?
+  user        User?           @relation(fields: [userId], references: [id])
+
+  @@index([companyName])
+  @@index([status])
+  @@index([createdAt])
+  @@map("research_requests")
+}
+
+model ResearchReport {
+  id                     String          @id @default(cuid())
+  requestId              String          @unique
+  companyName            String
+  ticker                 String?
+  summary                String?
+  financialScore         Int?
+  financialExplanation   String?
+  sentimentScore         Int?
+  sentimentExplanation   String?
+  competitiveScore       Int?
+  competitiveExplanation String?
+  riskScore              Int?
+  riskExplanation        String?
+  finalDecision          String?
+  confidence             Int?
+  reasoning              String?
+  fullReport             String?
+  sources                String          @default("[]")
+  agentTimeline          String          @default("[]")
+  createdAt              DateTime        @default(now())
+  updatedAt              DateTime        @updatedAt
+  request                ResearchRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+
+  @@index([companyName])
+  @@index([ticker])
+  @@index([finalDecision])
+  @@map("research_reports")
+}
+
+model AgentLog {
+  id         String          @id @default(cuid())
+  requestId  String
+  agentName  String
+  input      String?
+  output     String?
+  startTime  DateTime        @default(now())
+  endTime    DateTime?
+  durationMs Int?
+  status     String          @default("PENDING")
+  error      String?
+  createdAt  DateTime        @default(now())
+  request    ResearchRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+
+  @@index([requestId])
+  @@index([agentName])
+  @@map("agent_logs")
+}

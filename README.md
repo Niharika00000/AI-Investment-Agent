@@ -1,5 +1,14 @@
 # InvestInsight — AI Investment Research Agent
 
+## Live Demo
+**Frontend (Vercel):**
+(https://ai-investment-agent-ruby-xi.vercel.app)
+**Backend API (Render):**
+https://ai-investment-agent-26gv.onrender.com
+
+**GitHub Repository:**
+https://github.com/Niharika00000/AI-Investment-Agent
+
 An autonomous, multi-agent AI system that conducts deep equity research on any company and delivers a clear **INVEST ✅ or PASS ❌** verdict with full reasoning.
 
 Built with **Next.js 15**, **Node.js/Express**, **LangGraph.js**, **Google Gemini / OpenAI**, **PostgreSQL (Prisma)** — the exact production stack requested by InsideIIM × Altuni AI Labs.

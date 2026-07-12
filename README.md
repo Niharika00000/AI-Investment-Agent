@@ -220,13 +220,12 @@ Reasoning:  Leader in EV segment with strong brand and manufacturing scale.
 ## What I Would Improve With More Time
 
 1. **Real-time streaming** — SSE/WebSocket to stream each agent's progress live to the UI
-2. **Vercel + Supabase deployment** — zero-config cloud deployment with shareable link
-3. **PDF export** — generate proper print-optimized reports with charts (currently browser print)
-4. **Portfolio mode** — compare multiple companies side by side
-5. **Historical tracking** — store and graph a company's score changes over time
-6. **Agent retries with exponential backoff** — currently fails fast; should retry on transient errors
-7. **Unit + integration tests** — jest tests for agent schemas and API endpoints
-8. **Redis caching** — replace in-memory cache for production deployments
+2. **PDF export** — generate proper print-optimized reports with charts (currently browser print)
+3. **Portfolio mode** — compare multiple companies side by side
+4. **Historical tracking** — store and graph a company's score changes over time
+5. **Agent retries with exponential backoff** — currently fails fast; should retry on transient errors
+6. **Unit + integration tests** — jest tests for agent schemas and API endpoints
+7. **Redis caching** — replace in-memory cache for production deployments
 
 ---
 

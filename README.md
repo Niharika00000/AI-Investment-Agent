@@ -11,7 +11,7 @@ https://github.com/Niharika00000/AI-Investment-Agent
 
 An autonomous, multi-agent AI system that conducts deep equity research on any company and delivers a clear **INVEST ✅ or PASS ❌** verdict with full reasoning.
 
-Built with **Next.js 15**, **Node.js/Express**, **LangGraph.js**, **Google Gemini / OpenAI**, **PostgreSQL (Prisma)** — the exact production stack requested by InsideIIM × Altuni AI Labs.
+Built with Next.js 15, Node.js, LangGraph.js, Google Gemini/OpenAI, PostgreSQL (Prisma), following the recommended technology stack mentioned in the assignment.
 
 ---
 

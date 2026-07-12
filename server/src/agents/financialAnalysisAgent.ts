@@ -55,6 +55,15 @@ export async function financialAnalysisAgent(
     // Fetch comprehensive financial data
     financialData = await yahooFinanceService.getFinancialData(ticker);
 
+    console.log(
+  "Income Statements:",
+  financialData.incomeStatements?.length
+);
+
+console.log(
+  financialData.incomeStatements
+);
+
     // Build financial context for LLM
     const context = buildFinancialContext(ticker, financialData);
 

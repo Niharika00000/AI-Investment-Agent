@@ -8,7 +8,7 @@ export const config = {
   port: parseInt(process.env.PORT || "3001", 10),
   nodeEnv: process.env.NODE_ENV || "development",
   corsOrigin: process.env.CORS_ORIGIN || "http://localhost:3000",
-  mockMode: process.env.MOCK_MODE === "true",
+  mockMode: process.env.MOCK_MODE === "false",
 
   llm: {
     provider: (process.env.LLM_PROVIDER || "google") as "openai" | "anthropic" | "google",

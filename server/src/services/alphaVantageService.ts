@@ -67,6 +67,7 @@ class AlphaVantageService {
       cacheKey,
       async () => {
         try {
+          console.log("Alpha Vantage API Key:", this.apiKey);
           const response = await axios.get<AlphaVantageOverview>(
             this.baseUrl,
             {
@@ -78,6 +79,10 @@ class AlphaVantageService {
               timeout: 15000,
             }
           );
+
+          console.log("========== ALPHA VANTAGE RESPONSE ==========");
+console.log(response.data);
+console.log("============================================");
 
           // Alpha Vantage returns empty object or note when rate limited
           if (!response.data.Symbol) {
